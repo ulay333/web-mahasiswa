@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Mahasiswa</title>
+
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+}
+
+.menu{
+background:#333;
+padding:10px;
+text-align:center;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+.section{
+display:none;
+padding:40px;
+min-height:100vh;
+}
+
+.active{
+display:block;
+}
+
+/* halaman profil */
+.profil{
+background:#6fb3d2;
+text-align:center;
+}
+
+.profil h1{
+letter-spacing:3px;
+}
+
+/* halaman biodata */
+.biodata{
+background:#6ed3cf;
+}
+
+.biodata h1{
+text-align:center;
+}
+
+.container{
+display:flex;
+gap:30px;
+align-items:flex-start;
+margin-top:30px;
+}
+
+img{
+width:200px;
+}
+
+table{
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table, th, td{
+border:1px solid black;
+padding:8px;
+}
+
+.kembali{
+margin-top:20px;
+display:inline-block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="menu">
+<a href="#" onclick="showPage('profil')">Profil</a>
+<a href="#" onclick="showPage('biodata')">Biodata</a>
+</div>
+
+<!-- halaman profil -->
+<div id="profil" class="section profil active">
+<h1>SELAMAT DATANG</h1>
+<hr width="300">
+
+<p>Selamat berkunjung!</p>
+<p>Ini adalah website pertama saya, saya membuatnya berdasarkan tugas di lab dan saya membuat web ini dengan menggunakan bahasa pemrograman HTML.</p>
+<p>Nama saya : <b>Muhammad Yafi Ulayya</b></p>
+
+<p>Ini adalah link menuju biodata saya</p>
+
+<a href="#" onclick="showPage('biodata')">Klik disini</a>
+</div>
+
+
+<!-- halaman biodata -->
+<div id="biodata" class="section biodata">
+<h1>BIODATA SAYA</h1>
+<hr width="300">
+
+<div class="container">
+
+<div>
+<img src="https://via.placeholder.com/200" alt="foto">
+</div>
+
+<div>
+<p>Nama : Muhammad Yafi Ulayya</p>
+<p>Umur : 21 tahun</p>
+<p>Alamat : Purwoasri kediri</p>
+
+<h3>Riwayat Pendidikan</h3>
+
+<table>
+<tr>
+<th>Nama Sekolah</th>
+<th>Tahun Kelulusan</th>
+</tr>
+
+<tr>
+<td>SMKN 1 Purwoasri</td>
+<td>2024</td>
+</tr>
+
+<tr>
+<td>MTsN 3 Kediri</td>
+<td>2021</td>
+</tr>
+
+</table>
+
+<a class="kembali" href="#" onclick="showPage('profil')">kembali</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function showPage(id){
+
+document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+
+document.getElementById(id).classList.add('active');
+
+}
+</script>
+
+</body>
+</html>
